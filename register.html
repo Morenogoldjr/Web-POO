@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Shojostyle</title>
+    <title>Registrarse - Shojostyle</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -25,17 +25,23 @@
 
 <main class="auth-page">
     <section class="auth-card">
-        <h2>Iniciar Sesión</h2>
+        <h2>Crear una cuenta</h2>
         <form>
-            <label>Correo:</label>
-            <input type="email" required>
+            <label>Nombre completo</label>
+            <input type="text" placeholder="Ej. Ana Pérez" required>
 
-            <label>Contraseña:</label>
-            <input type="password" required>
+            <label>Correo electrónico</label>
+            <input type="email" placeholder="correo@dominio.com" required>
 
-            <button type="submit">Entrar</button>
+            <label>Contraseña</label>
+            <input type="password" placeholder="Mínimo 8 caracteres" required>
+
+            <label>Confirmar contraseña</label>
+            <input type="password" placeholder="Repite tu contraseña" required>
+
+            <button type="submit">Registrarse</button>
         </form>
-        <p class="link-action">¿No tienes cuenta? <a href="register.html">Regístrate aquí</a></p>
+        <p class="link-action">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
     </section>
 </main>
 

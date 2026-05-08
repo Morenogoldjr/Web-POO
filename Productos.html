@@ -9,15 +9,23 @@
 <body>
 
 <header>
-    <h1>Shojostyle</h1>
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="Productos.html">Productos</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
-    </nav>
+    <div class="header-inner">
+        <h1>Shojostyle</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Registrarse</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button class="cart-toggle" type="button">
+                Carrito <span class="cart-count" id="cartCount">0</span>
+            </button>
+        </div>
+    </div>
 </header>
 
 <main>
@@ -87,7 +95,20 @@
             </div>
         </article>
     </section>
+
+    <aside class="cart-drawer hidden" id="cartDrawer">
+        <div class="cart-header">
+            <h2>Tu carrito</h2>
+            <button class="close-cart" type="button" aria-label="Cerrar carrito">×</button>
+        </div>
+        <div class="cart-content" id="cartContent"></div>
+        <div class="cart-footer">
+            <p class="cart-total">Total: $<span id="cartTotal">0.00</span></p>
+            <button class="clear-cart" id="clearCart" type="button">Vaciar carrito</button>
+        </div>
+    </aside>
 </main>
 
+<script src="js/cart.js"></script>
 </body>
 </html>
