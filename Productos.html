@@ -16,8 +16,10 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="Productos.html">Productos</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Registrarse</a></li>
+                <li id="nav-perfil" style="display: none;"><a href="perfil.html">Mi Perfil</a></li>
+                <li id="nav-login"><a href="login.html">Login</a></li>
+                <li id="nav-logout" style="display: none;"><a href="#" onclick="cerrarSesion(event)">Cerrar Sesión</a></li>
+                <li id="nav-register"><a href="register.html">Registrarse</a></li>
             </ul>
         </nav>
         <div class="header-actions">
@@ -58,7 +60,7 @@
         <article class="producto-card">
             <img src="img/WhatsApp Image 2026-05-08 at 1.19.59 PM.jpeg" alt="Camiseta Retro" class="producto-imagen">
             <div class="producto-info">
-                <h3>CamisaDBZ3</h3>
+                <h3>Camisa DBZ3</h3>
                 <p>Estilo vintage con estampado exclusivo para un look único.</p>
                 <p class="precio">$249.00</p>
                 <button>Agregar al carrito</button>
@@ -91,6 +93,28 @@
 </main>
 
 <script src="js/cart.js"></script>
+<script>
+    // Verificar si el usuario está logueado y actualizar navegación
+    function actualizarNavegacion() {
+        const usuarioId = localStorage.getItem('usuarioId');
+        if (usuarioId) {
+            document.getElementById('nav-login').style.display = 'none';
+            document.getElementById('nav-register').style.display = 'none';
+            document.getElementById('nav-perfil').style.display = 'block';
+            document.getElementById('nav-logout').style.display = 'block';
+        }
+    }
+
+    function cerrarSesion(event) {
+        event.preventDefault();
+        localStorage.removeItem('usuarioId');
+        localStorage.removeItem('usuarioCorreo');
+        alert('Sesión cerrada');
+        window.location.href = 'index.html';
+    }
+
+    actualizarNavegacion();
+</script>
 <script src="//code.tidio.co/8l8ktagmo5jjmc333cb276gjhl0ebttv.js" async></script>
 </body>
 </html>
