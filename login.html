@@ -16,10 +16,8 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="Productos.html">Productos</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <li id="nav-perfil" style="display: none;"><a href="perfil.html">Mi Perfil</a></li>
-                <li id="nav-login"><a href="login.html">Login</a></li>
-                <li id="nav-logout" style="display: none;"><a href="#" onclick="cerrarSesion(event)">Cerrar Sesión</a></li>
-                <li id="nav-register"><a href="register.html">Registrarse</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Registrarse</a></li>
             </ul>
         </nav>
     </div>
@@ -28,43 +26,19 @@
 <main class="auth-page">
     <section class="auth-card">
         <h2>Iniciar Sesión</h2>
-        <form id="login-form">
-            <label for="correo">Correo:</label>
-            <input type="email" id="correo" name="correo" required>
+        <form>
+            <label>Correo:</label>
+            <input type="email" required>
 
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" required>
+            <label>Contraseña:</label>
+            <input type="password" required>
 
             <button type="submit">Entrar</button>
         </form>
         <p class="link-action">¿No tienes cuenta? <a href="register.html">Regístrate aquí</a></p>
-        <div id="message" class="message"></div>
     </section>
 </main>
 
-<script>
-    function cerrarSesion(event) {
-        event.preventDefault();
-        localStorage.removeItem('usuarioId');
-        localStorage.removeItem('usuarioCorreo');
-        alert('Sesión cerrada');
-        window.location.href = 'index.html';
-    }
-
-    function actualizarNavegacion() {
-        const usuarioId = localStorage.getItem('usuarioId');
-        if (usuarioId) {
-            document.getElementById('nav-login').style.display = 'none';
-            document.getElementById('nav-register').style.display = 'none';
-            document.getElementById('nav-perfil').style.display = 'block';
-            document.getElementById('nav-logout').style.display = 'block';
-        }
-    }
-
-    actualizarNavegacion();
-</script>
-
-<script src="js/login.js"></script>
 <script src="//code.tidio.co/8l8ktagmo5jjmc333cb276gjhl0ebttv.js" async></script>
 </body>
 </html>
