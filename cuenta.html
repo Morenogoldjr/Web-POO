@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Shojostyle</title>
+    <title>Mi cuenta - Shojostyle</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -26,23 +26,27 @@
 
 <main class="auth-page">
     <section class="auth-card">
-        <h2>Iniciar Sesión</h2>
-        <form id="loginForm">
-            <p class="message" id="authMessage"></p>
+        <h2>Administrador de cuenta</h2>
+        <p class="message" id="accountMessage"></p>
 
-            <label for="correo">Correo:</label>
-            <input id="correo" name="correo" type="email" required>
+        <form id="accountForm">
+            <label for="nombre">Nombre completo</label>
+            <input id="nombre" name="nombre" type="text" placeholder="Tu nombre completo" required>
 
-            <label for="password">Contraseña:</label>
-            <input id="password" name="password" type="password" required>
+            <label for="correo">Correo electrónico</label>
+            <input id="correo" name="correo" type="email" placeholder="correo@dominio.com" required>
 
-            <button type="submit">Entrar</button>
+            <label for="newPassword">Nueva contraseña</label>
+            <input id="newPassword" name="newPassword" type="password" placeholder="Deja en blanco para mantener la misma">
+
+            <button type="submit">Actualizar cuenta</button>
         </form>
-        <script src="js/auth.js"></script>
-        <p class="link-action">¿No tienes cuenta? <a href="register.html">Regístrate aquí</a></p>
+
+        <button id="logoutBtn" type="button" class="secondary-button">Cerrar sesión</button>
     </section>
 </main>
 
+<script src="js/account.js"></script>
 <script src="//code.tidio.co/8l8ktagmo5jjmc333cb276gjhl0ebttv.js" async></script>
 </body>
 </html>
